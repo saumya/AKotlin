@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val btnSendData = findViewById<Button>(R.id.btnSendData)
 
         btnStart.setOnClickListener {
-            val tStart = Toast.makeText(applicationContext,"Start Click", Toast.LENGTH_LONG)
+            val tStart = Toast.makeText(applicationContext,"Start Click", Toast.LENGTH_SHORT)
             tStart.show()
             Log.d(TAG,"Click : Start")
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnStop.setOnClickListener {
-            val tStop = Toast.makeText(applicationContext,"Stop Click", Toast.LENGTH_LONG)
+            val tStop = Toast.makeText(applicationContext,"Stop Click", Toast.LENGTH_SHORT)
             tStop.show()
             Log.d(TAG,"Click : Stop")
 
