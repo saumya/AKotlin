@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import android.widget.Toast
+import kotlin.concurrent.thread
 
 class RayServiceA : Service() {
 
@@ -39,21 +40,21 @@ class RayServiceA : Service() {
         }
 
         // Starting a Thread
-        Thread{
+        thread {
+            Thread.sleep(5000)
+            Log.d(TAG,"==================: Thread :==================")
 
             while (isRunning){
-                // Can not update UI from another Thread
                 Log.d(TAG,"==================: InsideWhile :==================")
                 Thread.sleep(5000)
             }
-
         }
 
 
         //return super.onStartCommand(intent, flags, startId)
 
         //return START_NOT_STICKY
-        //return START_STICKY
+        //return START_STICKY //This re-starts the Thread
         //return START_REDELIVER_INTENT
 
         return START_STICKY
