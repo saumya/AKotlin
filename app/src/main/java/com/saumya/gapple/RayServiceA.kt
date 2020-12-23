@@ -56,8 +56,11 @@ class RayServiceA : Service() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG,"Service is being Killed ...")
+        /*
+        // can not update UI from another Thread
         val tStop = Toast.makeText(applicationContext,"Service dying ...", Toast.LENGTH_LONG)
         tStop.show()
+        */
         isRunning = false
     }
 
