@@ -16,12 +16,8 @@ class RayServiceA : Service() {
         Log.d(TAG,"init : Service is running ...")
     }
 
-    /*
-    override fun onBind(intent: Intent): IBinder {
-        TODO("Return the communication channel to the service.")
-    }
-    */
     override fun onBind(intent: Intent?): IBinder? {
+        // TODO("Return the communication channel to the service.")
         return null
     }
 
