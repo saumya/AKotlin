@@ -19,13 +19,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initThisView(){
+        Log.d(TAG,"initThisView")
+
         val btnStart = findViewById<Button>(R.id.btnStart)
         val btnStop = findViewById<Button>(R.id.btnStop)
         val btnSendData = findViewById<Button>(R.id.btnSendData)
 
         btnStart.setOnClickListener {
             Toast.makeText(applicationContext,"Start Click", Toast.LENGTH_SHORT).show()
-            
+
             Log.d(TAG,"Click : Start")
 
             Intent(this,RayServiceA::class.java).also {

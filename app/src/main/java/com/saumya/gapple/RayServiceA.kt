@@ -24,20 +24,26 @@ class RayServiceA : Service() {
         return null
     }
 
+    override fun onCreate() {
+        super.onCreate()
+        Log.d(TAG,"==================: onCreate :==================")
+    }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         isRunning = true
         val sData = intent?.getStringExtra("S_DATA")
         sData?.let {
+            Log.d(TAG,"==================: onStartCommand :> ==================")
             Log.d(TAG,sData)
+            Log.d(TAG,"==================: onStartCommand :< ==================")
         }
 
         // Starting a Thread
         Thread{
 
             while (isRunning){
-                Log.d(TAG,"In while")
-                val tStop = Toast.makeText(applicationContext,"... THREAD WHILE ...", Toast.LENGTH_SHORT)
-                tStop.show()
+                // Can not update UI from another Thread
+                Log.d(TAG,"==================: InsideWhile :==================")
                 Thread.sleep(5000)
             }
 
@@ -55,12 +61,11 @@ class RayServiceA : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
+
+        Log.d(TAG,"==================: onDestroy :==================")
         Log.d(TAG,"Service is being Killed ...")
-        /*
-        // can not update UI from another Thread
-        val tStop = Toast.makeText(applicationContext,"Service dying ...", Toast.LENGTH_LONG)
-        tStop.show()
-        */
+
+        // Can not update UI from another Thread
         isRunning = false
     }
 
