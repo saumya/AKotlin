@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
         val btnSendData = findViewById<Button>(R.id.btnSendData)
 
         btnStart.setOnClickListener {
-            val tStart = Toast.makeText(applicationContext,"Start Click", Toast.LENGTH_SHORT)
-            tStart.show()
+            Toast.makeText(applicationContext,"Start Click", Toast.LENGTH_SHORT).show()
+            
             Log.d(TAG,"Click : Start")
 
             Intent(this,RayServiceA::class.java).also {
@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnStop.setOnClickListener {
-            val tStop = Toast.makeText(applicationContext,"Stop Click", Toast.LENGTH_SHORT)
-            tStop.show()
+            Toast.makeText(applicationContext,"Stop Click", Toast.LENGTH_SHORT).show()
+
             Log.d(TAG,"Click : Stop")
 
             Intent(this,RayServiceA::class.java).also {
