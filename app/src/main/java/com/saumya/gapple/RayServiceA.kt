@@ -37,7 +37,7 @@ class RayServiceA : Service() {
 
         // Starting a Thread
         thread {
-            Thread.sleep(5000)
+            Thread.sleep(1000)
             Log.d(TAG,"==================: Thread :==================")
 
             while (isRunning){
